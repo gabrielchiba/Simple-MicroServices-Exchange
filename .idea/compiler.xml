@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="cloud-server" />
         <module name="cloud-microservices" />
+        <module name="cloud-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
