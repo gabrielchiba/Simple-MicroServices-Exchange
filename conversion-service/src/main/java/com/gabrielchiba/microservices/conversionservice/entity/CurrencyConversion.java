@@ -1,32 +1,25 @@
-package com.gabrielchiba.microservices.exchangeservice.entity;
+package com.gabrielchiba.microservices.conversionservice.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.math.BigDecimal;
 
-@Entity
-public class CurrencyExchange {
-    @Id
+public class CurrencyConversion {
     private Long id;
-
-    @Column(name = "currency_from")
     private String from;
-
-    @Column(name = "currency_to")
     private String to;
-
-    @Column(name = "conversion_multiple")
     private BigDecimal conversionMultiple;
+    private BigDecimal quantity;
+    private BigDecimal totalAmount;
 
-    public CurrencyExchange() {
+    public CurrencyConversion() {
     }
 
-    public CurrencyExchange(Long id, String from, String to, BigDecimal conversionMultiple) {
+    public CurrencyConversion(Long id, String from, String to, BigDecimal conversionMultiple, BigDecimal quantity, BigDecimal totalAmount) {
         this.id = id;
         this.from = from;
         this.to = to;
         this.conversionMultiple = conversionMultiple;
+        this.quantity = quantity;
+        this.totalAmount = totalAmount;
     }
 
     public Long getId() {
@@ -59,5 +52,21 @@ public class CurrencyExchange {
 
     public void setConversionMultiple(BigDecimal conversionMultiple) {
         this.conversionMultiple = conversionMultiple;
+    }
+
+    public BigDecimal getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(BigDecimal quantity) {
+        this.quantity = quantity;
+    }
+
+    public BigDecimal getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
     }
 }
