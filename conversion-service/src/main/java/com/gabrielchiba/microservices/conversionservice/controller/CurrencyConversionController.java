@@ -33,8 +33,9 @@ public class CurrencyConversionController {
 
         CurrencyConversion currencyConversion = responseEntity.getBody();
         return new CurrencyConversion(currencyConversion.getId(),
-                from, to, quantity,
+                from, to,
                 currencyConversion.getConversionMultiple(),
+                quantity,
                 quantity.multiply(currencyConversion.getConversionMultiple()));
     }
 
